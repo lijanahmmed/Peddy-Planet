@@ -34,4 +34,4 @@ Here are some key ES6 features:
 ## Live link to the deployed project
 
 Visit Peddy Planet :
-[https://paddy-test-a6.netlify.app/](https://paddy-test-a6.netlify.app/)
+[https://peddy-planet.netlify.app/](https://peddy-planet.netlify.app/)
