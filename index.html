@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peddy Planet</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.12/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        .active{
+            background-color: rgba(14, 122, 129, 0.5);
+            border-radius: 10px;
+            padding: 0px 8px;
+        } 
+    </style>
+
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                para: 'rgba(73, 73, 73, 1)',
+                bttn: 'rgba(14, 122, 129, 1)',
+                bttn2: 'rgba(14, 122, 129, 0.5)'
+              },
+              fontFamily: {
+                lato: 'lato',
+              },
+            },
+          },
+        }
+      </script>
+</head>
+<body class="font-lato">
+    <header class="mt-2 w-11/12 mx-auto">
+        <nav>
+            <div class="navbar bg-base-100">
+                <div class="navbar-start">
+            
+                  <h1 class="text-3xl font-bold md:font-extrabold flex gap-1 items-center">
+                    <div>
+                        <img src="images/logo.webp" alt="">
+                    </div> Peddy</h1>
+                </div>
+                <div class="navbar-center hidden lg:flex">
+                  <ul class="menu menu-horizontal px-1">
+                    <li class="text-para2 text-base font-normal"><a>Home</a></li>
+                    <li class="text-para2 text-base font-normal"><a>Shop</a></li>
+                    <li class="text-para2 text-base font-normal"><a>Contact</a></li>
+                  </ul>
+                </div>
+                <div class="navbar-end">
+                    <div class="hidden lg:block  h-12 w-12 border-2 border-[rgba(233, 233, 233, 1)] rounded-full text-center py-2">
+                        <i class="fa-regular fa-user"></i>
+                    </div>
+                  <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                      <i class="fa-solid fa-bars"></i>
+                    </div>
+                    <ul
+                      tabindex="0"
+                      class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow right-0">
+                      <li class="text-para2 text-base font-normal"><a>Home</a></li>
+                    <li class="text-para2 text-base font-normal"><a>Shop</a></li>
+                    <li class="text-para2 text-base font-normal"><a>Contact</a></li>
+                    <li class="text-para2 text-base font-normal"><a>Profile</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+        </nav>
+        <div class="my-10">
+            <h4 class="text-sm md:text-xl text-para font-bold text-center">Bringing Families Together ❤️‍🔥 </h4>
+            <h1 class="mt-5 mx-auto w-10/12 text-3xl md:text-5xl md:text-2xl font-extrabold text-center">Your Path to Adoption <br> Starts Here</h1>
+            <p class="mt-5 mx-auto w-9/12 text-center">A pet adoption is a rewarding experience where individuals or families give a loving home to animals in need. Adopted pets provide companionship, love, and joy, fostering a lifelong bond.</p>
+            <div class="mt-5 text-center items-center">
+              <a href="#view-more"><button class="btn bg-bttn text-white">View More</button></a>
+            </div>
+            <div class="mt-10 w-9/12 mx-auto flex justify-center">
+                <img src="images/pet.webp" alt="">
+            </div>
+        </div>
+    </header>
+    <main id="view-more" class="my-16 w-11/12 mx-auto">
+        <div>
+            <h1 class="text-2xl font-bold text-center">Adopt  Your  Best Friend</h1>
+            <p class="mt-5 text-center mx-auto w-9/12">Friendly, loyal pets looking for a loving home. Adopt today to bring joy, companionship, and unconditional love into your life.</p>
+        </div>
+
+        <nav id="categories" class="mt-10 w-11/12 md:w-9/12 mx-auto grid grid-cols-2 md:grid-cols-4 gap-5"></nav>
+
+        <div class="mt-10 w-10/12 mx-auto flex justify-between items-center">
+            <div>
+                <h4 class="tex-3xl font-extrabold">Best Deal For you</h4>
+                
+            </div>
+            <div>
+                <button onclick="sortPrice()" class="btn bg-bttn text-white">Sort by Price</button>
+            </div>
+        </div>
+
+        <section class="mt-10 flex justify-around gap-5 relative">
+          <div id="loader" class="absolute z-40"></div>
+            <div id="animals" class="h-fit grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 space-x-2 space-y-2 w-[80%] z-10">
+              
+
+            </div>
+            <div class="border-2 rounded-xl w-[20%]">
+              <div id="like-animal" class="h-fit grid grid-cols-1 lg:grid-cols-2 space-x-1 space-y-1 p-2">
+
+              </div>
+            </div>
+
+            <div id="modal-container">
+                
+            </div>
+            <div id="adopt-container">
+              <dialog id="adoptCustom" class="modal">
+                <div class="modal-box text-center">
+                  <i class="fa-regular fa-handshake text-5xl"></i>
+                  <h3 class="text-3xl font-extrabold">Congrats</h3>
+                  <p class="py-4 text-lg font-bold">Adoption proccess is start for your pet</p>
+                   <div class="text-5xl">
+                    <span id="count">3</span>
+                   </div>
+                </div>
+          </span>
+                <form method="dialog" class="modal-backdrop">
+                  <button id="timer-colse">close</button>
+                </form>
+              </dialog>
+            </div>
+        </section>
+        
+    </main>
+
+
+    <footer class="mt-10 py-10 bg-black">
+      <section class="mx-auto w-11/12 lg:flex lg:flex-row lg:justify-between">
+        <div>
+          <div>
+            <h1 class="text-3xl text-white font-bold md:font-extrabold flex gap-1 items-center">
+            <div>
+                <img src="images/logo.webp" alt="">
+            </div> Peddy</h1>
+          </div>
+          <div>
+            <p class="text-white mt-2">Location: av. Washington 165, NY CA 54003</p>
+            <p class="text-white mt-2">Phone: +31 85 964 47 253</p>
+            <p class="text-white mt-2">Email: info@yourdomain.com</p>
+            <p class="text-white mt-2">Openings hours: 9.00 AM - 5.00 PM</p>
+          </div>
+          <div class="mt-2 flex gap-5">
+            <a href=""><i class="fa-brands fa-facebook text-white text-3xl"></i></a>
+            <a href=""><i class="fa-brands fa-x-twitter text-white text-3xl"></i></a>
+            <a href=""><i class="fa-brands fa-youtube text-white text-3xl"></i></a>
+            <a href=""><i class="fa-brands fa-instagram text-white text-3xl"></i></a>
+          </div>
+        </div>
+        <div class="mt-12 lg:mt-0">
+          <h2 class="text-white text-xl font-bold">Useful Links</h2>
+        <div class="mt-5 text-white"><a href="">Home</a></div>
+        <div class="mt-2 text-white"><a href="">About Us</a></div>
+        <div class="mt-2 text-white"><a href="">Animals</a></div>
+        <div class="mt-2 text-white"><a href="">Foundation</a></div>
+        <div class="mt-2 text-white"><a href="">Contact</a></div>
+        </div>
+        <div class="mt-12 lg:mt-0">
+          <h2 class="text-white text-xl font-bold">Useful Links</h2>
+          <div class="mt-5"><input class="p-2 rounded-sm" type="text" placeholder="Enter your email"></div>
+          <div class="mt-3">
+            <button class="btn bg-bttn text-white">Subscribe</button>
+        </div>
+        </div>
+      </section>  
+    </footer>
+    <script src="js/index.js"></script>
+</body>
+</html>
