@@ -89,7 +89,7 @@ const displayAdoptPets = (adoptPet) => {
                 clearInterval(countdownInterval);
                 countdown = 3
                 countTime.innerText = countdown
-                document.getElementById("timer-colse").click()
+                document.getElementById("timer-close").click()
             }
         }, 1000);
     adoptCustom.showModal();
